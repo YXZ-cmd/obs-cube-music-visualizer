@@ -10,11 +10,12 @@ loopback, VB-CABLE, color key, or background process.
 ## Install a compiled release
 
 1. Close OBS.
-2. Extract the release ZIP directly into your OBS installation folder, normally
-   `C:\Program Files\obs-studio`.
-3. Confirm the DLL is located at
-   `C:\Program Files\obs-studio\obs-plugins\64bit\obs-cube-music-visualizer.dll`.
-4. Start OBS again.
+2. Open `C:\ProgramData\obs-studio\plugins` in File Explorer. Create the
+   `plugins` folder if it does not exist.
+3. Extract the contents of the release ZIP into that `plugins` folder.
+4. Confirm the DLL is located at
+   `C:\ProgramData\obs-studio\plugins\obs-cube-music-visualizer\bin\64bit\obs-cube-music-visualizer.dll`.
+5. Start OBS again.
 
 ## Use it
 
@@ -38,8 +39,8 @@ The source is natively transparent. Only the selected OBS source affects it.
 
 ## Building on Windows
 
-This project uses the official OBS Plugin Template build system and targets the
-OBS 31.1.1 plugin SDK, whose ABI is compatible with OBS Studio 32.2.2.
+This project uses the official OBS Plugin Template build system. The Windows
+package is intended for OBS Studio 32.2.2 (64-bit).
 
 Requirements:
 

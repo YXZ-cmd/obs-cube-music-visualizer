@@ -1,0 +1,33 @@
+name: Build Windows Plugin
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-x64:
+    name: Windows x64
+    runs-on: windows-2022
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build plugin
+        shell: pwsh
+        run: .github/scripts/Build-Windows.ps1 -Target x64 -Configuration RelWithDebInfo
+
+      - name: Create ZIP
+        shell: pwsh
+        run: .github/scripts/Package-Windows.ps1 -Target x64 -Configuration RelWithDebInfo
+
+      - name: Upload installable plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: obs-cube-music-visualizer-windows-x64
+          path: release/obs-cube-music-visualizer-1.0.0-windows-x64.zip
+          if-no-files-found: error
