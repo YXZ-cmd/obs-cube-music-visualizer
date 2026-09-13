@@ -1,5 +1,7 @@
 # Cube Music Visualizer for OBS
 
+[![Build Windows Plugin](https://github.com/YXZ-cmd/obs-cube-music-visualizer/actions/workflows/build-windows.yml/badge.svg)](https://github.com/YXZ-cmd/obs-cube-music-visualizer/actions/workflows/build-windows.yml)
+
 A native OBS source for **OBS Studio 32.2.2, Windows 64-bit**. It listens to one
 audio source already inside OBS and renders square frequency blocks from the
 right edge toward the left on a transparent canvas.
